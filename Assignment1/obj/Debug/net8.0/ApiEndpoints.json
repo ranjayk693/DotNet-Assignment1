@@ -1,41 +1,21 @@
 [
   {
-    "ContainingType": "Assignment1.Controllers.ValuesController",
-    "Method": "GetData",
-    "RelativePath": "api/Values",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Assignment1.Models.KeyPairDtos, Assignment1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Assignment1.Controllers.ValuesController",
+    "ContainingType": "Assignment1.Controllers.KeysController",
     "Method": "PostData",
-    "RelativePath": "api/Values",
+    "RelativePath": "api/Keys",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "data",
-        "Type": "Assignment1.Models.KeyPairDtos",
+        "Type": "Assignment1.Models.KeyPair",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Assignment1.Models.KeyPairDtos",
+        "Type": "Assignment1.Models.KeyPair",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,9 +26,9 @@
     ]
   },
   {
-    "ContainingType": "Assignment1.Controllers.ValuesController",
+    "ContainingType": "Assignment1.Controllers.KeysController",
     "Method": "GetByIdData",
-    "RelativePath": "api/Values/{key}",
+    "RelativePath": "api/Keys/{key}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -61,7 +41,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Assignment1.Models.KeyPairDtos",
+        "Type": "Assignment1.Models.KeyPair",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -72,30 +52,9 @@
     ]
   },
   {
-    "ContainingType": "Assignment1.Controllers.ValuesController",
-    "Method": "PutData",
-    "RelativePath": "api/Values/{key}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "key",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "keyvalue",
-        "Type": "Assignment1.Models.UpdateDtos",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Assignment1.Controllers.ValuesController",
+    "ContainingType": "Assignment1.Controllers.KeysController",
     "Method": "DeleteData",
-    "RelativePath": "api/Values/{key}",
+    "RelativePath": "api/Keys/{key}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -109,16 +68,37 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Assignment1.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "Assignment1.Controllers.KeysController",
+    "Method": "PutData",
+    "RelativePath": "api/Keys/key",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "keyvalue",
+        "Type": "Assignment1.Models.UpdateDtos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Assignment1.Controllers.KeysController",
+    "Method": "GetData",
+    "RelativePath": "api/Keys/key-value",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Assignment1.WeatherForecast, Assignment1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Assignment1.Models.KeyPair, Assignment1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -10,50 +10,48 @@ namespace Assignment1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class KeysController : ControllerBase
     {
         private readonly DataContext _dataContext;
 
-        public ValuesController(DataContext dataContext)
+        public KeysController(DataContext dataContext)
         {
             _dataContext = dataContext;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<KeyPairDtos>>> GetData()
+        [HttpGet("key-value")]
+        public async Task<ActionResult<IEnumerable<KeyPair>>> GetData()
         {
             var keyPairs = await _dataContext.KeyPairs.ToListAsync();
-            var keyPairDtos = keyPairs.Select(kp => new KeyPairDtos { key = kp.key, value = kp.value }).ToList();
-
-            return Ok(keyPairDtos);
+            return Ok(keyPairs);
         }
 
         [HttpGet("{key}")]
-        public async Task<ActionResult<KeyPairDtos>> GetByIdData(string key)
+        public async Task<ActionResult<KeyPair>> GetByIdData(string key)
         {
             var keyPair = await _dataContext.KeyPairs.FirstOrDefaultAsync(elem => elem.key == key);
             if (keyPair == null)
             {
                 return NotFound();
             }
-            var newKeyPair = new KeyPairDtos { key = keyPair.key, value = keyPair.value };
-            return Ok(newKeyPair);
+            return Ok(keyPair);
         }
 
+        /*Post Api by key-value*/
         [HttpPost]
-        public async Task<ActionResult<KeyPairDtos>> PostData(KeyPairDtos data)
+        public async Task<ActionResult<KeyPair>> PostData(KeyPair data)
         {
             var existingKeyPair = await _dataContext.KeyPairs.FirstOrDefaultAsync(elem => elem.key == data.key);
             if (existingKeyPair != null)
             {
                 return Conflict($"A record with key '{data.key}' already exists.");
             }
-            var newData=new KeyPair {id= Guid.NewGuid(), key = data.key,value=data.value };
-            _dataContext.KeyPairs.Add(newData);
+            _dataContext.KeyPairs.Add(data);
             await _dataContext.SaveChangesAsync();
             return Ok("Data is created sucessfully");
         }
 
+        /*Update value*/
         [HttpPut("{key}")]
         public async Task<IActionResult> PutData(string key, UpdateDtos keyvalue)
         {
@@ -68,6 +66,7 @@ namespace Assignment1.Controllers
             return Ok("Data is updated sucessfully");
         }
 
+        /*Delete API by key*/
         [HttpDelete("{key}")]
         public async Task<ActionResult> DeleteData(string key)
         {

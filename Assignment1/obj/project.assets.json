@@ -4529,11 +4529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Desktop\\Asp.Net\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Desktop\\Asp.Net\\DotNet-Assignment1\\Assignment1\\Assignment1.csproj",
       "projectName": "Assignment1",
-      "projectPath": "C:\\Users\\admin\\Desktop\\Asp.Net\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectPath": "C:\\Users\\admin\\Desktop\\Asp.Net\\DotNet-Assignment1\\Assignment1\\Assignment1.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Desktop\\Asp.Net\\Assignment1\\Assignment1\\obj\\",
+      "outputPath": "C:\\Users\\admin\\Desktop\\Asp.Net\\DotNet-Assignment1\\Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

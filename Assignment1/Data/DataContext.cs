@@ -7,5 +7,11 @@ namespace Assignment1.Data
     {
         public DataContext(DbContextOptions options):base(options) { }
         public DbSet<KeyPair> KeyPairs { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<KeyPair>().HasKey(kp => kp.key);
+        }
     }
 }
